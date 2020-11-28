@@ -1,0 +1,28 @@
+<div *ngIf="myWeather != null " class="container text-center my-5">
+
+  <h2>{{myWeather.name}}</h2>
+  <p>{{myWeather.temp}} &deg; </p>
+  <p>{{myWeather.weatherKind}}</p>
+  <div class="img w-100">
+    <img src="http://openweathermap.org/img/wn/{{myWeather.icon}}.png" class="w-50" height="200px" alt="">
+  </div>
+  <p> Max Tem : {{myWeather.tempMax}} &deg;  </p>
+  <p> Min Tem : {{myWeather.tempMin}} &deg;  </p>
+
+</div>
+
+<div class="w-50 m-auto">
+  <!--  -->
+
+  <form action=""  [formGroup] ='WeatherForm' (ngSubmit) = 'onSubmit(WeatherForm)' >
+
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="City Name" formControlName='city' >
+      <div class="input-group-append">
+        <button class="btn btn-outline-primary " type="submit" id="button-addon2">GO</button>
+      </div>
+    </div>
+
+  </form>
+
+</div>

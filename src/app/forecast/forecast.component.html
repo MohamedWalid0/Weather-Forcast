@@ -1,0 +1,43 @@
+<div class="container mb-5">
+
+  <div class="w-50 m-auto pt-5">
+
+    <form action=""  [formGroup] ='forecastForm' (ngSubmit) = 'onSubmit(forecastForm)' >
+
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="City Name" formControlName='forecastCity' >
+        <div class="input-group-append">
+          <button class="btn btn-outline-primary " type="submit" id="button-addon2">GO</button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+
+
+  <div class="row justify-content-around  text-center" >
+
+    <div *ngFor="let item of cityForecast" class="p-2 m-4">
+
+      <div class="col-auto">
+        <h2>{{item.day | date:'MMMM d'}}</h2>
+        <div class="img w-100">
+          <img src="http://openweathermap.org/img/wn/{{item.icon}}.png" class="w-50" height="150px" alt="">
+        </div>
+        <h6>Max Temp : {{item.tempMax}} &deg;</h6>
+        <h6> Min Temp : {{item.tempMin}} &deg;</h6>
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+
+
+</div>
+
+
+
